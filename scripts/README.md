@@ -1,226 +1,172 @@
-!\[alt text](https://img.shields.io/github/actions/workflow/status/kushalsamanta/x-type-lig-lib/main.yml?branch=main)
+<h1 align="left"><b>Sequential Pipeline for Preparing the DFT Geo-Optimization Dataset</b></h1>
 
-!\[GitHub tag (latest by date)](https://img.shields.io/github/v/tag/kushalsamanta/x-type-lig-lib)
 
-!\[GitHub code size in bytes](https://img.shields.io/github/languages/code-size/kushalsamanta/x-type-lig-lib)
 
-!\[GitHub commit activity](https://img.shields.io/github/commit-activity/y/kushalsamanta/x-type-lig-lib)
+<p align="justify">
 
+Follow these steps in order.
 
+</p>
 
-\# Table of Contents
 
-\* \[Introduction](#intro)
 
-\* \[Pipeline overview](#overview)
+<hr/>
 
-\* \[Step 1 — Extract all intermediate steps to JSON](#step1)
 
-\* \[Step 2 — Inspect energy/force ranges (pre-filter)](#step2)
 
-\* \[Step 3 — Take every 10th step and combine to CSV](#step3)
+<h2><b>1) Extract all intermediate steps to JSON</b></h2>
 
-\* \[Step 4 — Filter outliers by energy \& forces](#step4)
 
-\* \[Step 5 — Visualize filtered distributions](#step5)
 
-\* \[Step 6 — Deduplicate similar structures (StructureMatcher)](#step6)
+<p align="justify">
 
-\* \[Images](#images)
 
-\* \[Repo layout](#layout)
 
-\* \[Notes](#notes)
+<strong>Script:</strong> <code>extract\_all\_intermediate\_info.py</code> <br><br>
 
+Use this to extract all intermediate steps during DFT optimization for different structures into JSON files. <br><br>
 
+Example: If you have a geo-opt record for <code>structure\_1</code> with intermediate steps in folders like <code>geo\_opt</code>, <code>geo\_opt\_2</code>, <code>geo\_opt\_3</code>, and so on, then all coordinates, energy, force, stress, lattice parameters, and volume from those steps will be saved into <code>structure\_1.json</code>. <br><br>
 
-<a name="intro"></a>
+The same applies to other structures (e.g., <code>structure\_2.json</code>). <br><br>
 
-\# DFT Geo-Optimization Dataset Pipeline (Introduction)
+All JSON files will be saved in a single directory.
 
 
 
-This repository provides a small, repeatable workflow to curate datasets from \*\*DFT geometry-optimization\*\* runs:
+</p>
 
-1\) extract all ionic steps, 2) inspect value ranges, 3) thin near-duplicates, 4) filter outliers, 5) visualize clean histograms, and 6) deduplicate similar structures using `pymatgen.StructureMatcher`.
 
 
+<hr/>
 
-<a name="overview"></a>
 
-\## Pipeline overview
 
+<h2><b>2) Inspect energy/force ranges before filtering</b></h2>
 
 
-1\. \*\*Extract\*\* all intermediate geo-opt steps → per-structure JSON  
 
-2\. \*\*Inspect\*\* energy \& force ranges before filtering  
+<p align="justify">
 
-3\. \*\*Thin\*\* by keeping \*\*every 10th\*\* ionic step and \*\*combine\*\* → CSV  
 
-4\. \*\*Filter\*\* outliers by energy and per-component forces  
 
-5\. \*\*Visualize\*\* histograms for energy and forces  
+<strong>Script:</strong> <code>energy\_force\_component\_distribution\_before\_filter.py</code> <br><br>
 
-6\. \*\*Deduplicate\*\* similar structures (StructureMatcher `stol`)
+Use this to check the ranges of energy and force values for filtering. <br><br>
 
+In early geo-opt steps, energies can be very high (out of range) and not useful for the dataset; the same can happen for forces.
 
 
----
 
+</p>
 
 
-<a name="step1"></a>
 
-\## Step 1 — Extract all intermediate steps to JSON
+<hr/>
 
 
 
-\*\*Script:\*\* \[`scripts/extract\_all\_intermediate\_info.py`](scripts/extract\_all\_intermediate\_info.py)
+<h2><b>3) Take every 10th step and combine to a CSV</b></h2>
 
 
 
-Use this to extract all intermediate steps during DFT optimization for different structures into JSON files.
+<p align="justify">
 
 
 
-\*\*Example:\*\* If you have a geo-opt record for `structure\_1` with intermediate steps in folders like `geo\_opt`, `geo\_opt\_2`, `geo\_opt\_3`, and so on, then all \*\*coordinates\*\*, \*\*energy\*\*, \*\*force\*\*, \*\*stress\*\*, \*\*lattice parameters\*\*, and \*\*volume\*\* from those steps will be saved into `structure\_1.json`.  
+<strong>Script:</strong> <code>combine\_to\_csv\_at\_each\_10th\_step.py</code> <br><br>
 
-The same applies to other structures (e.g., `structure\_2.json`). All JSON files will be saved in a single directory.
+To avoid very similar consecutive structures, take every 10th step for each structure individually from the folder created in Step 1. <br><br>
 
+This script then combines all individual JSON files into a single CSV file.
 
 
----
 
+</p>
 
 
-<a name="step2"></a>
 
-\## Step 2 — Inspect energy/force ranges (pre-filter)
+<hr/>
 
 
 
-\*\*Script:\*\* \[`scripts/energy\_force\_component\_distribution\_before\_filter.py`](scripts/energy\_force\_component\_distribution\_before\_filter.py)
+<h2><b>4) Filter outliers by energy and forces</b></h2>
 
 
 
-Use this to check the ranges of \*\*energy\*\* and \*\*force\*\* values for filtering. Early geo-opt steps can have very high energies/forces that are not useful for the dataset.
+<p align="justify">
 
 
 
----
+<strong>Script:</strong> <code>filter\_en\_force.py</code> <br><br>
 
+After you understand the distributions from Step 2, use this to filter out outliers in energy and force values from the CSV produced in Step 3.
 
 
-<a name="step3"></a>
 
-\## Step 3 — Take every 10th step and combine to CSV
+</p>
 
 
 
-\*\*Script:\*\* \[`scripts/combine\_to\_csv\_at\_each\_10th\_step.py`](scripts/combine\_to\_csv\_at\_each\_10th\_step.py)
+<hr/>
 
 
 
-To avoid very similar consecutive structures, take \*\*every 10th step\*\* for each structure individually (from the directory created in Step 1).  
+<h2 style="margin-bottom:8px;"><b>5) Visualize the filtered distributions</b></h2>
 
-This script then \*\*combines\*\* all per-structure JSON files into a \*\*single CSV\*\*.
 
 
+<p align="justify" style="margin:0;">
 
----
+&nbsp; <strong>Script:</strong> <code>plot\_energy\_force\_hist.py</code><br>
 
+&nbsp; Visualize the distributions of the filtered CSV dataset file (energy and force components) to confirm the filtering looks sensible.
 
+</p>
 
-<a name="step4"></a>
+<table style="width:100%; border-collapse:collapse; margin:0;">
 
-\## Step 4 — Filter outliers by energy \& forces
+&nbsp; <tr>
 
+&nbsp;   <td align="center" width="50%" style="padding:0;">
 
+&nbsp;     <img src="../IMG/energy.png" alt="Energy distribution histogram" width="98%" style="vertical-align:middle;">
 
-\*\*Script:\*\* \[`scripts/filter\_en\_force.py`](scripts/filter\_en\_force.py)
+&nbsp;   </td>
 
+&nbsp;   <td align="center" width="50%" style="padding:0;">
 
+&nbsp;     <img src="../IMG/forces.png" alt="Force component distributions (Fx, Fy, Fz)" width="98%" style="vertical-align:middle;">
 
-After you understand the distributions from Step 2, use this to filter out outliers in \*\*energy\*\* and \*\*per-component forces (Fx, Fy, Fz)\*\* from the CSV produced in Step 3.
+&nbsp;   </td>
 
+&nbsp; </tr>
 
+</table>
 
----
 
 
+<hr/>
 
-<a name="step5"></a>
 
-\## Step 5 — Visualize filtered distributions
 
+<h2><b>6) Deduplicate similar structures with StructureMatcher (pymatgen)</b></h2>
 
 
-\*\*Script:\*\* \[`scripts/plot\_energy\_force\_hist.py`](scripts/plot\_energy\_force\_hist.py)
 
+<p align="justify">
 
 
-Visualize the distributions of the filtered CSV dataset (energy and force components) to confirm the filtering looks sensible.
 
+<strong>Tool:</strong> <code>StructureMatcher</code> (from <i>pymatgen</i>) using the <code>stol</code> parameter <br><br>
 
+Further filter the dataset after Step 4 by removing structurally similar entries using pymatgen’s StructureMatcher. <br><br>
 
-| !\[Energy distribution histogram](IMG/energy.png) | !\[Force component distributions (Fx, Fy, Fz)](IMG/forces.png) |
+Tune the <code>stol</code> parameter to control how strictly similar structures are considered duplicates.
 
-|:--:|:--:|
 
-| Energy distribution | Force component distributions (Fx, Fy, Fz) |
 
-
-
-\*(If your actual filenames are `energy\_hist.png` / `forces\_hist.png`, change the paths to `IMG/energy\_hist.png` and `IMG/forces\_hist.png`.)\*
-
-
-
----
-
-
-
-<a name="step6"></a>
-
-\## Step 6 — Deduplicate similar structures (StructureMatcher)
-
-
-
-\*\*Tool script:\*\* \[`scripts/structure\_matcher.py`](scripts/structure\_matcher.py)
-
-
-
-Uses `pymatgen.StructureMatcher` (tune the `stol` parameter) to remove structurally similar entries after Step 4.  
-
-Keep the \*\*more negative energy\*\* (more stable) when two structures match.
-
-
-
----
-
-
-
-<a name="images"></a>
-
-\## Images
-
-
-
-\- `IMG/energy.png`  
-
-\- `IMG/forces.png`  
-
-
-
----
-
-
-
-<a name="layout"></a>
-
-\## Repo layout
-
-
+</p>
 
 
 
