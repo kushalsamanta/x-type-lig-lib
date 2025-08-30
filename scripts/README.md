@@ -128,13 +128,13 @@ Visualize the distributions of the filtered CSV dataset file (energy and force c
 
 &nbsp; <tr>
 
-&nbsp;   <td align="center" width="50%">
+&nbsp;   <td align="center" width="60%">
 
 &nbsp;     <img src="../IMG/energy.png" alt="Energy distribution histogram" width="95%">
 
 &nbsp;   </td>
 
-&nbsp;   <td align="center" width="50%">
+&nbsp;   <td align="center" width="60%">
 
 &nbsp;     <img src="../IMG/forces.png" alt="Force component distributions (Fx, Fy, Fz)" width="95%">
 
