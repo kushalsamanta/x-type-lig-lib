@@ -6,6 +6,10 @@ For each intermediate state, it writes:
 - per atom forces (fx, fy, fz)
 - stress tensor components
 - cell volume
+
+As a result, we will get the folder "all_intermediate_information", and this will contain 
+all the JSON files for different structures. And each JSON
+file contains each intermediate step.
 """
 
 import os
