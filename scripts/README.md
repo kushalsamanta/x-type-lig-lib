@@ -112,21 +112,39 @@ After you understand the distributions from Step 2, use this to filter out outli
 
 
 
-<h2><b>5) Visualize the filtered distributions</b></h2>
-
-<p><strong>Script:</strong> <code>plot\_energy\_force\_hist.py</code><br>
-
-Visualize the distributions of the filtered CSV dataset file (energy and force components) to confirm the filtering looks sensible.</p>
+<h2 style="margin-bottom:8px;"><b>5) Visualize the filtered distributions</b></h2>
 
 
 
-<p align="center">
+<p align="justify" style="margin:0;">
 
-&nbsp; <img src="../IMG/energy.png" alt="Energy distribution histogram" width="49%"> 
+&nbsp; <strong>Script:</strong> <code>plot\_energy\_force\_hist.py</code><br>
 
-&nbsp; <img src="../IMG/forces.png" alt="Force component distributions (Fx, Fy, Fz)" width="49%">
+&nbsp; Visualize the distributions of the filtered CSV dataset file (energy and force components) to confirm the filtering looks sensible.
 
 </p>
+
+<table style="width:100%; border-collapse:collapse; margin:0;">
+
+&nbsp; <tr>
+
+&nbsp;   <td align="center" width="50%" style="padding:0;">
+
+&nbsp;     <img src="../IMG/energy.png" alt="Energy distribution histogram" width="98%" style="vertical-align:middle;">
+
+&nbsp;   </td>
+
+&nbsp;   <td align="center" width="50%" style="padding:0;">
+
+&nbsp;     <img src="../IMG/forces.png" alt="Force component distributions (Fx, Fy, Fz)" width="98%" style="vertical-align:middle;">
+
+&nbsp;   </td>
+
+&nbsp; </tr>
+
+</table>
+
+
 
 <hr/>
 
