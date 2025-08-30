@@ -22,7 +22,7 @@ Follow these steps in order.
 
 
 
-<strong>Script:</strong> <code>extract\_all\_intermediate\_info.py</code> <br><br>
+<strong>Script:</strong> <a href="./extract\_all\_intermediate\_info.py"><code>extract\_all\_intermediate\_info.py</code></a> <br><br>
 
 Use this to extract all intermediate steps during DFT optimization for different structures into JSON files. <br><br>
 
@@ -50,7 +50,7 @@ All JSON files will be saved in a single directory.
 
 
 
-<strong>Script:</strong> <code>energy\_force\_component\_distribution\_before\_filter.py</code> <br><br>
+<strong>Script:</strong> <a href="./energy\_force\_component\_distribution\_before\_filter.py"><code>energy\_force\_component\_distribution\_before\_filter.py</code></a> <br><br>
 
 Use this to check the ranges of energy and force values for filtering. <br><br>
 
@@ -74,7 +74,7 @@ In early geo-opt steps, energies can be very high (out of range) and not useful 
 
 
 
-<strong>Script:</strong> <code>combine\_to\_csv\_at\_each\_10th\_step.py</code> <br><br>
+<strong>Script:</strong> <a href="./combine\_to\_csv\_at\_each\_10th\_step.py"><code>combine\_to\_csv\_at\_each\_10th\_step.py</code></a> <br><br>
 
 To avoid very similar consecutive structures, take every 10th step for each structure individually from the folder created in Step 1. <br><br>
 
@@ -98,7 +98,7 @@ This script then combines all individual JSON files into a single CSV file.
 
 
 
-<strong>Script:</strong> <code>filter\_en\_force.py</code> <br><br>
+<strong>Script:</strong> <a href="./filter\_en\_force.py"><code>filter\_en\_force.py</code></a> <br><br>
 
 After you understand the distributions from Step 2, use this to filter out outliers in energy and force values from the CSV produced in Step 3.
 
@@ -118,7 +118,7 @@ After you understand the distributions from Step 2, use this to filter out outli
 
 <p align="justify" style="margin:0;">
 
-&nbsp; <strong>Script:</strong> <code>plot\_energy\_force\_hist.py</code><br>
+&nbsp; <strong>Script:</strong> <a href="./plot\_energy\_force\_hist.py"><code>plot\_energy\_force\_hist.py</code></a><br>
 
 &nbsp; Visualize the distributions of the filtered CSV dataset file (energy and force components) to confirm the filtering looks sensible.
 
@@ -158,7 +158,7 @@ After you understand the distributions from Step 2, use this to filter out outli
 
 
 
-<strong>Tool:</strong> <code>StructureMatcher</code> (from <i>pymatgen</i>) using the <code>stol</code> parameter <br><br>
+<strong>Tool script:</strong> <a href="./structure\_matcher.py"><code>structure\_matcher.py</code></a> (uses <i>pymatgen</i>’s <code>StructureMatcher</code> and the <code>stol</code> parameter) <br><br>
 
 Further filter the dataset after Step 4 by removing structurally similar entries using pymatgen’s StructureMatcher. <br><br>
 
