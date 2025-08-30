@@ -1,3 +1,5 @@
+\# CdSe-QDs-GNN-Framework
+
 \# Sequential Pipeline for Preparing the DFT Geo-Optimization Dataset
 
 
