@@ -122,8 +122,6 @@ After you understand the distributions from Step 2, use this to filter out outli
 
 &nbsp; Visualize the distributions of the filtered CSV dataset file (energy and force components) to confirm the filtering looks sensible.
 
-</p>
-
 
 
 <table style="width:100%; border-collapse:collapse; margin:0;">
@@ -145,6 +143,8 @@ After you understand the distributions from Step 2, use this to filter out outli
 &nbsp; </tr>
 
 </table>
+
+</p>
 
 <hr/>
 
