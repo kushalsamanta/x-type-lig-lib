@@ -22,7 +22,7 @@ Follow these steps in order.
 
 
 
-<strong>Script:</strong> <code>extract\_all\_intermediate\_info.py</code> <br><br>
+<strong>Script:</strong> <code><a href="./extract-all-intermediate-info.py">extract-all-intermediate-info.py</a></code> <br><br>
 
 Use this to extract all intermediate steps during DFT optimization for different structures into JSON files. <br><br>
 
@@ -50,7 +50,7 @@ All JSON files will be saved in a single directory.
 
 
 
-<strong>Script:</strong> <code>energy\_force\_component\_distribution\_before\_filter.py</code> <br><br>
+<strong>Script:</strong> <code><a href="./energy-force-component-distribution-before-filter.py">energy-force-component-distribution-before-filter.py</a></code> <br><br>
 
 Use this to check the ranges of energy and force values for filtering. <br><br>
 
@@ -94,9 +94,7 @@ This script then combines all individual JSON files into a single CSV file.
 
 <p align="justify">
 
-&nbsp; <strong>Script:</strong>
-
-&nbsp; <a href="./filter-en-force.py">filter-en-force.py</a><br><br>
+&nbsp; <strong>Script:</strong> <code><a href="./filter-en-force.py">filter-en-force.py</a></code> <br><br>      
 
 &nbsp; After you understand the distributions from Step 2, use this to filter out outliers in energy and force values
 
@@ -116,7 +114,7 @@ This script then combines all individual JSON files into a single CSV file.
 
 <p align="justify" style="margin:0;">
 
-&nbsp; <strong>Script:</strong> <code>plot\_energy\_force\_hist.py</code><br>
+&nbsp; <strong>Script:</strong> <code><a href="./plot-energy-force-hist.py">plot-energy-force-hist.py</a></code><br>
 
 &nbsp; Visualize the distributions of the filtered CSV dataset file (energy and force components) to confirm the filtering looks sensible.
 
@@ -156,7 +154,9 @@ This script then combines all individual JSON files into a single CSV file.
 
 
 
-<strong>Tool:</strong> <code>StructureMatcher</code> (from <i>pymatgen</i>) using the <code>stol</code> parameter <br><br>
+<strong>Script:</strong> <code><a href="./structure-matcher.py">structure-matcher.py</a></code><br> (from <i>pymatgen</i>) 
+
+using the <code>stol</code> parameter <br><br>
 
 Further filter the dataset after Step 4 by removing structurally similar entries using pymatgen’s StructureMatcher. <br><br>
 
