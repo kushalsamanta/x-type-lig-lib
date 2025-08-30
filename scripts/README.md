@@ -124,23 +124,27 @@ After you understand the distributions from Step 2, use this to filter out outli
 
 </p>
 
+<table style="width:100%; border-collapse:collapse; margin:0;">
+
+&nbsp; <tr>
+
+&nbsp;   <td align="center" width="50%" style="padding:0;">
+
+&nbsp;     <img src="../IMG/energy.png" alt="Energy distribution histogram" width="98%" style="vertical-align:middle;">
+
+&nbsp;   </td>
+
+&nbsp;   <td align="center" width="50%" style="padding:0;">
+
+&nbsp;     <img src="../IMG/forces.png" alt="Force component distributions (Fx, Fy, Fz)" width="98%" style="vertical-align:middle;">
+
+&nbsp;   </td>
+
+&nbsp; </tr>
+
+</table>
 
 
-<div align="center" style="margin-top:6px;">
-
-&nbsp; <img src="../IMG/energy.png"
-
-&nbsp;      alt="Energy distribution histogram"
-
-&nbsp;      style="display:inline-block; width:49%; max-width:49%; vertical-align:middle; margin:0;"/>
-
-&nbsp; <img src="../IMG/forces.png"
-
-&nbsp;      alt="Force component distributions (Fx, Fy, Fz)"
-
-&nbsp;      style="display:inline-block; width:49%; max-width:49%; vertical-align:middle; margin:0;"/>
-
-</div>
 
 <hr/>
 
