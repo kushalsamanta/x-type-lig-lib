@@ -1,3 +1,5 @@
+#This is script to extract the informations from the geometric optimization steps of DFT simulations. It extracts the Energy of the structure at each intermediate state as well the forces per atom (all three components), stress values, lattice parameters a, b, and c, as well the volume of the system.
+
 import os
 import json
 import re
