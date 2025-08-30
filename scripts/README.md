@@ -154,9 +154,9 @@ This script then combines all individual JSON files into a single CSV file.
 
 
 
-<strong>Script:</strong> <code><a href="./structure-matcher.py">structure-matcher.py</a></code><br> (from <i>pymatgen</i>) 
+<strong>Script:</strong> <code><a href="./structure-matcher.py">structure-matcher.py</a></code> 
 
-using the <code>stol</code> parameter <br><br>
+(from <i>pymatgen</i>) using the <code>stol</code> parameter <br><br>
 
 Further filter the dataset after Step 4 by removing structurally similar entries using pymatgen’s StructureMatcher. <br><br>
 
