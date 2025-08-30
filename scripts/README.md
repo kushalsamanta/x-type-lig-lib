@@ -1,4 +1,4 @@
-\# \*\*Sequential Pipeline for Preparing the DFT Geo-Optimization Dataset\*\*
+\*\*Sequential Pipeline for Preparing the DFT Geo-Optimization Dataset\*\*
 
 
 
