@@ -92,17 +92,15 @@ This script then combines all individual JSON files into a single CSV file.
 
 <h2><b>4) Filter outliers by energy and forces</b></h2>
 
-
-
 <p align="justify">
 
+&nbsp; <strong>Script:</strong>
 
+&nbsp; <a href="./filter-en-force.py">filter-en-force.py</a><br><br>
 
-<strong>Script:</strong> <code>filter\_en\_force.py</code> <br><br>
+&nbsp; After you understand the distributions from Step 2, use this to filter out outliers in energy and force values
 
-After you understand the distributions from Step 2, use this to filter out outliers in energy and force values from the CSV produced in Step 3.
-
-
+&nbsp; from the CSV produced in Step 3.
 
 </p>
 
