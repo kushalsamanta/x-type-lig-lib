@@ -1,6 +1,4 @@
-\# CdSe-QDs-GNN-Framework
-
-\# Sequential Pipeline for Preparing the DFT Geo-Optimization Dataset
+<h1 align="left"><b>Sequential Pipeline for Preparing the DFT Geo-Optimization Dataset</b></h1>
 
 
 
@@ -12,11 +10,11 @@ Follow these steps in order.
 
 
 
----
+<hr/>
 
 
 
-\## 1) Extract all intermediate steps to JSON
+<h2><b>1) Extract all intermediate steps to JSON</b></h2>
 
 
 
@@ -40,11 +38,11 @@ All JSON files will be saved in a single directory.
 
 
 
----
+<hr/>
 
 
 
-\## 2) Inspect energy/force ranges before filtering
+<h2><b>2) Inspect energy/force ranges before filtering</b></h2>
 
 
 
@@ -64,11 +62,11 @@ In early geo-opt steps, energies can be very high (out of range) and not useful 
 
 
 
----
+<hr/>
 
 
 
-\## 3) Take every 10th step and combine to a CSV
+<h2><b>3) Take every 10th step and combine to a CSV</b></h2>
 
 
 
@@ -88,11 +86,11 @@ This script then combines all individual JSON files into a single CSV file.
 
 
 
----
+<hr/>
 
 
 
-\## 4) Filter outliers by energy and forces
+<h2><b>4) Filter outliers by energy and forces</b></h2>
 
 
 
@@ -110,11 +108,11 @@ After you understand the distributions from Step 2, use this to filter out outli
 
 
 
----
+<hr/>
 
 
 
-\## 5) Visualize the filtered distributions
+<h2><b>5) Visualize the filtered distributions</b></h2>
 
 
 
@@ -132,11 +130,11 @@ Visualize the distributions of the filtered CSV dataset file (energy and force c
 
 
 
----
+<hr/>
 
 
 
-\## 6) Deduplicate similar structures with StructureMatcher (pymatgen)
+<h2><b>6) Deduplicate similar structures with StructureMatcher (pymatgen)</b></h2>
 
 
 
