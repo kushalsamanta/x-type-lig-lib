@@ -3,6 +3,8 @@ check the distribution of energies, forces (fx, fy, and fz)
 This will help us filter the range of energy, forces, or stress values we should consider in our data set before combining all the JSON files into a CSV file.
 
 We can set the bin sizes for energy and forces accordingly.
+
+Look into the result CSV file, and decide the range of energy and forces we should take for our dataset.
 """
 
 
