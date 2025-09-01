@@ -167,4 +167,18 @@ Tune the <code>stol</code> parameter to control how strictly similar structures 
 </p>
 
 
+<h2><b>7) After all filtration check the range of energy & force values left with</b></h2>
+
+<p align="justify">
+
+<strong>Script:</strong> <code><a href="./range_energy_force_from_csv.py">range_energy_force_from_csv.py</a></code> 
+
+
+It reports the Energy min/max and component-wise force ranges (Fx, Fy, Fz) across all atoms and rows. <br><br>
+
+This is the actual energy and force value range we will train the force field model.
+
+</p>
+
+
 
